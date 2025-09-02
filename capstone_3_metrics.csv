@@ -1,0 +1,12 @@
+﻿Model;ROC AUC;PR AUC;F1;Recall;Precision;Notes
+Dummy (majority);0.5;148;0.0;0.0;0.0;Benchmark baseline.
+Logistic Regression (balanced);0.4398;0.1335;0.1903;0.4054;0.1244;High recall but very low precision.
+Random Forest (balanced);0.4917;0.1398;0.0;0.0;0.0;Collapsed to predicting majority class.
+XGBoost (baseline);0.5104;0.1526;0.1355;125;148;Best performance. Small but consistent improvement.
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
