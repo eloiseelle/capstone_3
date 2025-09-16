@@ -30,14 +30,13 @@ This project analyzes Netflix’s 2025 User Behavior Dataset to identify the beh
 
 We compared four models using PR AUC as the primary metric (due to class imbalance):
 
-| Model                          | ROC AUC   | PR AUC    | Recall    | Precision | Notes                                              |
-| ------------------------------ | --------- | --------- | --------- | --------- | -------------------------------------------------- |
-| Dummy (majority baseline)      | 0.500     | 0.148     | 0.000     | 0.000     | Always predicts majority class                     |
-| Logistic Regression (balanced) | 0.440     | 0.133     | 0.405     | 0.124     | High recall, very low precision                    |
-| Random Forest (balanced)       | 0.492     | 0.140     | 0.000     | 0.000     | Collapsed to majority class                        |
-| XGBoost (final)                | 0.510     | 0.153     | 0.125     | 0.148     | Best performance. Small but consistent improvement |
+<img width="527" height="164" alt="NEW METRICS" src="https://github.com/user-attachments/assets/1dfe0c67-d188-4e52-aac8-ed7f0d5d66a9" />
 
-**Interpretation:** Even though performance gains were modest, XGBoost demonstrated the ability to detect weak behavioral patterns where other models failed.
+**Interpretation:** 
+
+- Random Forest delivered the highest PR AUC (0.241), slightly outperforming Logistic Regression.
+- XGBoost underperformed in PR AUC but showed a more balanced recall/precision trade-off.
+- Overall, all models remain close to the baseline, highlighting the need for richer time-sensitive features before predictions can drive business impact.
 
 ## 5. Recommendations
 
@@ -47,9 +46,9 @@ We compared four models using PR AUC as the primary metric (due to class imbalan
 
 ## 6. Future work
 
-* Build richer features (recency, engagement decay and interactions).
-* Apply survival analysis to study how churn risk changes over time.
-* Validate interventions through controlled A/B testing to measure impact on churn and revenue.
+* Engineer richer temporal features (recency, engagement decay, inactivity streaks).
+* Explore survival analysis to study how churn risk evolves over time.
+* Validate model-driven interventions through controlled A/B testing to measure real impact on retention and revenue.
 
 ---
 
